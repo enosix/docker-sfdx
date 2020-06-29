@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/powershell:latest
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update -y \
     && apt-get install -y --no-install-recommends \
-    xz-utils nodejs gnupg curl ca-certificates apt-transport-https \
+    xz-utils git nodejs gnupg curl ca-certificates apt-transport-https \
     && cd /tmp \
     && export SFDX_DEBUG=1 \
     && curl -sL https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz | tar xJ \
