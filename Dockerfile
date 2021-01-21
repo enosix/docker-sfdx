@@ -7,10 +7,8 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     xz-utils git nodejs gnupg curl ca-certificates apt-transport-https \
     && cd /tmp \
     && export SFDX_DEBUG=1 \
-    && curl -sL https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz | tar xJ \
-    && ./sfdx*/install \
-    && rm -rf ./sfdx* \
-    && sfdx update
+    && npm install sfdx-cli@7.82.1-0 --global \
+    && sfdx --version
 
 RUN curl -sSfL https://apt.octopus.com/public.key | apt-key add - \
     && sh -c "echo deb https://apt.octopus.com/ stable main > /etc/apt/sources.list.d/octopus.com.list" \
