@@ -4,9 +4,13 @@ FROM mcr.microsoft.com/powershell:latest
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update -y \
     && apt-get install -y --no-install-recommends \
-    xz-utils git nodejs npm gnupg curl ca-certificates apt-transport-https \
+    xz-utils git gnupg  dirmngr lsb-release curl ca-certificates apt-transport-https gcc g++ make \
     && cd /tmp \
-    && export SFDX_DEBUG=1 \
+    && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - \
+    && apt-get update \
+    && apt-get -y install nodejs
+    
+RUN export SFDX_DEBUG=1 \
     && npm install sfdx-cli@7.82.1-0 --global \
     && sfdx --version
 
