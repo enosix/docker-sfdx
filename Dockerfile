@@ -6,7 +6,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends \
     xz-utils git gnupg  dirmngr lsb-release curl ca-certificates apt-transport-https gcc g++ make \
     && cd /tmp \
-    && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - \
+    && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get update \
     && apt-get -y install nodejs
     
