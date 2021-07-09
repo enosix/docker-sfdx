@@ -11,7 +11,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install nodejs
     
 RUN export SFDX_DEBUG=1 \
-    && npm install sfdx-cli@7.82.1-0 --global \
+    && npm install sfdx-cli@7.109.0 --global \
     && sfdx --version
 
 RUN curl -sSfL https://apt.octopus.com/public.key | apt-key add - \
